@@ -1,9 +1,18 @@
-a=10 
+from flask import Flask
 
-b=20
+app = Flask(__name__)
 
-c=a+b
+# 테스트 기능
+@app.route('/hello')
+def hello_Flask():
+    return 'Hello, Flask'
 
-print(c)
+@app.route('/hi')
+def hi_Flask():
+    return 'Hi, Flask'
 
-print('hello falsk')     
+if __name__ == '__main__':
+    app.run(
+    host="0.0.0.0",
+    port=7777,
+    debug=True)
